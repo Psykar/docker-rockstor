@@ -1,0 +1,7 @@
+[network_messaging_zeromq_release-stable]
+name=ZeroMQ
+type=rpm-md
+enabled=1
+baseurl=http://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/CentOS_7/
+gpgkey=http://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/CentOS_7/repodata/repomd.xml.key
+gpgcheck=1

@@ -1,0 +1,9 @@
+#RockStor repos
+
+[rockstor]
+name=Rockstor 3 - x86_64 
+baseurl=http://rockstor.com/rockrepo/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rockstor
+metadata_expire=1m
