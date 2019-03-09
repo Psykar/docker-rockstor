@@ -4,9 +4,12 @@ services:
   rockstor:
     build: .
     privileged: true
-    hostname: rockstor
-    network_mode: host
+    # hostname: rockstor
+    # network_mode: host
     tmpfs: /run
+    ports:
+      - "8080:80"
+      - "8443:443"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /var/run/docker.sock:/var/run/docker.sock
