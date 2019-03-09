@@ -18,7 +18,6 @@ RUN /opt/rockstor/bin/buildout -N -c /opt/rockstor/buildout.cfg
 
 RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf 
 
-RUN yum install -y 
 # RUN systemctl disable NetworkManager
 RUN mv /bin/hostnamectl /bin/hostnamectl-back
 RUN ln -sv /bin/true /bin/hostnamectl
