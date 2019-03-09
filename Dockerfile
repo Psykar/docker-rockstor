@@ -5,11 +5,11 @@ COPY Rockstor.repo ZeroMQ.repo /etc/yum.repos.d/
 COPY Rockstor.gpg /etc/pki/rpm-gpg/RPM-GPG-KEY-Rockstor
 
 RUN yum update -y && \
-    yum install -y https://centos7.iuscommunity.org/ius-release.rpm && \
-    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    yum install -y https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum install -y rockstor git gcc gcc-c++ make python-devel zeromq-devel postgresql-devel file which grubby openssl man postgresql-server postgresql-contrib python-distro postgresql python-setuptools NetworkManager cryptsetup e2fsprogs
 # Because we're going to use git
 RUN yum remove -y rockstor docker-common
+RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 RUN yum install -y docker-ce docker-ce-cli containerd.io
 
 RUN mv /opt/rockstor /opt/rockstor-back
