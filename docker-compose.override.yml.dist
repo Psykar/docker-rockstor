@@ -2,14 +2,16 @@ version: '3.4'
 
 volumes:
   rockstor:
-  postgres: 
+  postgres:
+  etc:
 
 services:
   rockstor:
     volumes:
       - postgres:/var/lib/pgsql/
       # So it caches the fact it's finished setup!
-      - rockstor:/opt/rockstor
+      - rockstor:/opt/rockstor/
+      - etc:/etc/
     ports:
       - 80:80
       - 443:443
