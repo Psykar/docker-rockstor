@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   rockstor:
+    build: .
     image: psykar/rockstor:latest
     privileged: true
     # hostname: rockstor
