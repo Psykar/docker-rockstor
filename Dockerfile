@@ -24,5 +24,10 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 RUN mv /bin/hostnamectl /bin/hostnamectl-back
 RUN ln -sv /bin/true /bin/hostnamectl
 
+# Replace the docker service as we're using the hosts one instead
+# We still need to allow it to start so rockstor doesn't
+# get suspicious....
+COPY ./docker.service /etc/systemd/system/docker.service
+
 CMD exec /usr/sbin/init
 EXPOSE 80 443
