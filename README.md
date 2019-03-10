@@ -1,6 +1,7 @@
 # Run Rockstor inside a Docker container
 
 > This is still WORK IN PROGRESS
+> WARNING: If your host's filesystem is btrfs starting this docker container will enable quotas on your host's filesystem.
 
 Make your own `docker-compose.overide.yml` from `docker-compose.overide.yml.dist`
 mapping ports and volumes as you like.
