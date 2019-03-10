@@ -1,6 +1,5 @@
 FROM opensuse/leap
-RUN zypper --non-interactive install gcc python-devel gcc-c++ postgresql-devel libblkid-devel python-distro NetworkManager
-RUN zypper --non-interactive install git which
+RUN zypper --non-interactive install gcc python-devel gcc-c++ postgresql-devel libblkid-devel python-distro NetworkManager postgresql-server nut nginx nfs-kernel-server at yum docker docker-compose samba yum-changelog python-distro git which
 RUN systemctl disable wicked
 RUN systemctl enable NetworkManager
 
