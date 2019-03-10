@@ -15,4 +15,4 @@ RUN /opt/rockstor-core/bin/buildout -N -c /opt/rockstor-core/buildout.cfg
 # RUN mv /bin/hostnamectl /bin/hostnamectl-back
 # RUN ln -sv /bin/true /bin/hostnamectl
 
-CMD exec /usr/sbin/init
+CMD exec /sbin/init
