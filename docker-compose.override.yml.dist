@@ -1,9 +1,0 @@
-version: '3.4'
-
-services:
-  rockstor:
-    volumes:
-      - /var/lib/rockstor/pgsql:/var/lib/pgsql/data/
-    ports:
-      - 80:80
-      - 443:443

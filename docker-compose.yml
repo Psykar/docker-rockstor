@@ -1,12 +1,25 @@
 version: '3.4'
 
+volumes:
+  rockstor:
+  postgres:
+  etc:
 services:
   rockstor:
     build: .
+    image: psykar/rockstor:latest
     privileged: true
-    hostname: rockstor
-    network_mode: host
     tmpfs: /run
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      # So host docker is useable by the child
       - /var/run/docker.sock:/var/run/docker.sock
+
+      # Persistent database
+      - postgres:/var/lib/pgsql/
+      # So it caches the fact it's finished setup!
+      - rockstor:/opt/rockstor/
+      # So configuration changes persist (systemd units etc)
+      - etc:/etc/
+
+    restart: unless-stopped
