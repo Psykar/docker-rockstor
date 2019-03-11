@@ -14,7 +14,6 @@ RUN yum install -y docker-ce docker-ce-cli containerd.io
 
 RUN mv /opt/rockstor /opt/rockstor-back
 RUN git clone https://github.com/rockstor/rockstor-core /opt/rockstor
-WORKDIR /opt/rockstor
 RUN python /opt/rockstor/bootstrap.py -c /opt/rockstor/buildout.cfg
 RUN /opt/rockstor/bin/buildout -N -c /opt/rockstor/buildout.cfg
 
@@ -29,5 +28,6 @@ RUN ln -sv /bin/true /bin/hostnamectl
 # get suspicious....
 COPY ./docker.service /etc/systemd/system/docker.service
 
+WORKDIR /opt/rockstor
 CMD exec /usr/sbin/init
 EXPOSE 80 443
